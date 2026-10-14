@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Materi edukasi SQLmap, SQL Injection, pengujian berizin, dan langkah perbaikan.">
+<title>CyberLearn — SQLmap & SQL Injection</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar"><a class="brand" href="#">⌘ Cyber<span>Learn</span></a><nav><a href="#materi">Materi</a><a href="#lab">Pengujian</a><a href="#perbaikan">Perbaikan</a><a href="#kuis">Kuis</a></nav><button id="themeToggle" class="theme">☾</button></header>
+<main>
+<section class="hero"><div><div class="eyebrow">● MODUL KEAMANAN APLIKASI WEB</div><h1>Kenali SQLmap.<br><span>Lindungi basis data.</span></h1><p>Materi interaktif tentang SQLmap, SQL Injection, cara melakukan pengujian yang berizin, dan langkah perbaikannya.</p><a class="btn primary" href="#materi">Mulai belajar →</a> <a class="btn secondary" href="#kuis">Coba kuis</a><p class="safe">✓ Fokus edukasi dan pengujian yang bertanggung jawab</p></div>
+<div class="visual"><div class="orbit"></div><div class="database"><div></div><div></div><div></div><b>⌑</b></div><aside class="float left">✓ <span><b>Database</b><small>Perlindungan aktif</small></span></aside><aside class="float right">⌘ <span><b>SQLmap</b><small>Security testing</small></span></aside><label>SECURE • TEST • FIX</label></div></section>
+<section class="stats"><div><b>01</b> Kenali konsep</div><div><b>02</b> Uji dengan izin</div><div><b>03</b> Perbaiki celah</div><div><b>04</b> Verifikasi ulang</div></section>
+<section id="materi" class="section"><div class="eyebrow">DASAR-DASAR</div><h2>Apa itu SQLmap?</h2><p class="lead"><b>SQLmap</b> adalah alat pengujian keamanan aplikasi web open-source yang membantu penguji berwenang mengidentifikasi dan mengevaluasi kerentanan <i>SQL Injection</i>.</p><div class="grid three"><article class="card"><div class="icon purple">⌘</div><h3>SQLmap</h3><p>Mengotomatisasi pemeriksaan SQL Injection pada aplikasi yang termasuk ruang lingkup pengujian.</p></article><article class="card"><div class="icon blue">⌁</div><h3>SQL Injection</h3><p>Kerentanan ketika masukan pengguna dapat memengaruhi struktur kueri SQL karena diproses tidak aman.</p></article><article class="card"><div class="icon green">♢</div><h3>Tujuan pengujian</h3><p>Menemukan risiko, mengumpulkan bukti minimum, dan membantu memperbaiki akar masalah.</p></article></div><div class="notice"><b>ⓘ Gunakan secara bertanggung jawab</b><p>Uji hanya sistem milik sendiri atau sistem yang secara eksplisit memberi izin. Jangan mengakses, mengekstrak, atau mengubah data orang lain.</p></div></section>
+<section class="section soft"><div class="eyebrow">MEKANISME</div><h2>Mengapa SQL Injection terjadi?</h2><div class="flow"><article><small>01</small><h3>Masukan pengguna</h3><p>Pengguna mengisi formulir atau parameter URL.</p></article><b>→</b><article><small>02</small><h3>Kueri tidak aman</h3><p>Aplikasi menyambungkan teks masukan langsung ke SQL.</p></article><b>→</b><article><small>03</small><h3>Risiko basis data</h3><p>Logika kueri dapat berubah dan data berisiko terekspos.</p></article></div><p class="muted">Pencegahan utama: gunakan kueri berparameter, batasi hak akses, dan tangani kesalahan tanpa membocorkan detail internal.</p></section>
+<section id="lab" class="section"><div class="eyebrow">PRAKTIK AMAN</div><h2>Alur pengujian berizin</h2><p class="lead">Lakukan tahapan ini di laboratorium lokal atau aplikasi latihan yang disediakan untuk pengujian.</p><div class="steps">
+<article><b class="num">01</b><div><h3>Tetapkan ruang lingkup</h3><p>Pastikan target, akun uji, waktu, dan jenis tes disetujui pemilik sistem.</p><span>Persiapan</span></div></article>
+<article><b class="num">02</b><div><h3>Siapkan lingkungan latihan</h3><p>Gunakan aplikasi sengaja rentan seperti OWASP Juice Shop atau DVWA di lingkungan lokal/terisolasi. Jangan menguji situs publik tanpa izin.</p><span>Lab lokal</span></div></article>
+<article><b class="num">03</b><div><h3>Pelajari dokumentasi SQLmap</h3><p>Pahami opsi, batasan, dan dampak tiap pengujian. Mulai dari pemeriksaan non-destruktif di laboratorium.</p><span>Pembelajaran</span></div></article>
+<article><b class="num">04</b><div><h3>Catat bukti minimum</h3><p>Catat komponen yang diuji, waktu, temuan, dan tingkat risiko. Hindari mengambil data sensitif.</p><span>Dokumentasi</span></div></article>
+<article><b class="num">05</b><div><h3>Perbaiki dan uji ulang</h3><p>Terapkan perbaikan, uji ulang di lingkungan berizin, dan pastikan celah sudah ditangani.</p><span>Validasi</span></div></article></div>
+<div class="terminal"><b>$_ &nbsp; Butuh tempat latihan?</b><p>Gunakan <a href="https://owasp.org/www-project-juice-shop/" target="_blank" rel="noopener">OWASP Juice Shop</a> atau <a href="https://github.com/digininja/DVWA" target="_blank" rel="noopener">DVWA</a> di mesin lokal. Ikuti panduan resmi proyek.</p></div></section>
+<section id="perbaikan" class="section soft"><div class="eyebrow">MITIGASI</div><h2>Langkah perbaikan</h2><div class="grid three">
+<article class="card fix"><small>01</small><h3>Prepared statements</h3><p>Gunakan kueri berparameter agar masukan tidak diperlakukan sebagai sintaks SQL.</p></article>
+<article class="card fix"><small>02</small><h3>Validasi masukan</h3><p>Validasi berdasarkan tipe dan format yang diharapkan. Ini bukan pengganti parameterisasi.</p></article>
+<article class="card fix"><small>03</small><h3>Hak akses minimum</h3><p>Batasi izin akun basis data sesuai kebutuhan aplikasi.</p></article>
+<article class="card fix"><small>04</small><h3>Penanganan error aman</h3><p>Jangan tampilkan kueri, struktur tabel, kredensial, atau detail internal kepada pengguna.</p></article>
+<article class="card fix"><small>05</small><h3>Rahasiakan kredensial</h3><p>Simpan rahasia dengan aman dan rotasi kredensial yang terpapar.</p></article>
+<article class="card fix"><small>06</small><h3>Uji ulang & pantau</h3><p>Tinjau log, perbarui dependensi, dan verifikasi perbaikan sebelum rilis.</p></article>
+</div><div class="codebox"><div class="codehead"><span>● ● ●</span><b>Contoh konsep — Python DB-API</b><button id="copyCode">Salin contoh</button></div><pre><code># Lebih aman: parameter terpisah dari perintah SQL
+cursor.execute(
+    "SELECT id, nama FROM pengguna WHERE email = %s",
+    (email_pengguna,)
+)</code></pre><p>Placeholder dapat berbeda antar-driver basis data. Ikuti dokumentasi driver yang digunakan.</p></div></section>
+<section id="kuis" class="section"><div class="eyebrow">UJI PEMAHAMAN</div><h2>Kuis singkat</h2><div class="quiz"><div class="quiztop"><span id="questionCount">Pertanyaan 1 dari 5</span><div class="track"><div id="progressFill"></div></div></div><div id="quizContent"></div><div class="quizfoot"><span id="feedback" aria-live="polite"></span><button class="btn primary" id="next" disabled>Jawab & lanjut →</button></div><div id="result" hidden></div></div></section>
+<section class="closing"><div class="check">✓</div><div><h3>Keamanan dimulai dari perbaikan.</h3><p>Temukan risiko secara bertanggung jawab, perbaiki akar masalah, lalu verifikasi hasilnya.</p></div><a class="btn secondary" href="#materi">Pelajari lagi ↑</a></section>
+</main><footer><a class="brand" href="#">⌘ Cyber<span>Learn</span></a><p>Materi edukasi keamanan aplikasi web • Gunakan hanya dengan izin.</p><small>© 2026 CyberLearn</small></footer><script src="script.js"></script></body></html>
